@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ירוק למהדרין — דשבורד ניהול</title>
+
+<!-- ⚠️ אם אי-פעם תיצור פריסה חדשה לגמרי ב-Apps Script (New deployment, לא New version),
+     עדכן כאן את הכתובת בשתי השורות המסומנות (meta refresh + JS), ותעלה מחדש ל-GitHub. -->
+<meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbw-mnzeZqPVjo0RnVxa3qmXaA5vhC5x16HLHpha9e5WyldK7VoUsqgi_M6mABuFSLwt4Q/exec?page=dashboard">
+
+<style>
+  html,body{margin:0;height:100%;background:#f4f7f5;color:#1c2b23;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+    display:flex;align-items:center;justify-content:center;text-align:center}
+  .box{padding:30px}
+  h1{color:#1d603b;font-size:20px;margin:0 0 10px}
+  p{color:#6c7b73;font-size:14px;margin:0 0 16px}
+  a{color:#2f754c;font-weight:700;text-decoration:underline}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>ירוק למהדרין — דשבורד ניהול</h1>
+    <p>מעביר אותך לדשבורד...</p>
+    <p><a id="manualLink" href="#">אם לא הועברת אוטומטית, לחץ כאן</a></p>
+  </div>
+
+  <script>
+    // ⚠️ אותה כתובת כמו למעלה ב-meta refresh — לעדכן גם כאן אם היא משתנה אי-פעם
+    var TARGET_URL = "https://script.google.com/macros/s/AKfycbw-mnzeZqPVjo0RnVxa3qmXaA5vhC5x16HLHpha9e5WyldK7VoUsqgi_M6mABuFSLwt4Q/exec?page=dashboard";
+    document.getElementById('manualLink').href = TARGET_URL;
+    window.location.replace(TARGET_URL);
+  </script>
+</body>
+</html>
