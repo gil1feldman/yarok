@@ -4,34 +4,56 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ירוק למהדרין — מערכת חממות</title>
-
-<!-- ⚠️ אם אי-פעם תיצור פריסה חדשה לגמרי (New deployment, לא New version) ב-Apps Script,
-     עדכן כאן את הכתובת בשתי השורות המסומנות למטה (meta refresh + JS), ותעלה מחדש ל-GitHub.
-     שאר הקובץ לא צריך להשתנות. -->
-<meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbw-mnzeZqPVjo0RnVxa3qmXaA5vhC5x16HLHpha9e5WyldK7VoUsqgi_M6mABuFSLwt4Q/exec?page=hub">
-
 <style>
-  html,body{margin:0;height:100%;background:#f4f7f5;color:#1c2b23;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    display:flex;align-items:center;justify-content:center;text-align:center}
-  .box{padding:30px}
-  h1{color:#1d603b;font-size:20px;margin:0 0 10px}
-  p{color:#6c7b73;font-size:14px;margin:0 0 16px}
-  a{color:#2f754c;font-weight:700;text-decoration:underline}
+  :root{
+    --green:#2f754c; --green-dark:#1d603b; --bg:#f4f7f5; --card:#ffffff;
+    --text:#1c2b23; --muted:#6c7b73; --line:#dfe7e2;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+  body{display:flex;flex-direction:column;min-height:100vh}
+  header{background:linear-gradient(135deg,var(--green-dark),var(--green));color:#fff;
+    padding:34px 20px 30px;text-align:center}
+  header h1{margin:0 0 6px;font-size:24px}
+  header p{margin:0;font-size:14px;opacity:.85}
+  main{flex:1;max-width:520px;width:100%;margin:0 auto;padding:28px 20px 40px;
+    display:flex;flex-direction:column;gap:16px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:26px 22px;text-align:center;text-decoration:none;color:inherit;
+    display:block;transition:box-shadow .12s,transform .12s}
+  .card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-1px)}
+  .card .icon{font-size:34px;margin-bottom:10px}
+  .card h2{margin:0 0 6px;font-size:19px;color:var(--green-dark)}
+  .card p{margin:0;font-size:13.5px;color:var(--muted)}
+  footer{text-align:center;color:var(--muted);font-size:12px;padding:16px 0 26px}
 </style>
 </head>
 <body>
-  <div class="box">
-    <h1>ירוק למהדרין — מערכת חממות</h1>
-    <p>מעביר אותך למערכת...</p>
-    <p><a id="manualLink" href="#">אם לא הועברת אוטומטית, לחץ כאן</a></p>
-  </div>
 
-  <script>
-    // ⚠️ אותה כתובת כמו למעלה ב-meta refresh — לעדכן גם כאן אם היא משתנה אי-פעם
-    var TARGET_URL = "https://script.google.com/macros/s/AKfycbw-mnzeZqPVjo0RnVxa3qmXaA5vhC5x16HLHpha9e5WyldK7VoUsqgi_M6mABuFSLwt4Q/exec?page=hub";
-    document.getElementById('manualLink').href = TARGET_URL;
-    window.location.replace(TARGET_URL);
-  </script>
+<header>
+  <h1>ירוק למהדרין</h1>
+  <p>מערכת ניהול גידולים ופעילות בחממות</p>
+</header>
+
+<main>
+  <!-- קישורים יחסיים לתוך אותו אתר GitHub Pages — לא ל-Apps Script ישירות.
+       זה בדיוק מה שנותן לך שליטה: אם כתובת ה-Apps Script משתנה אי-פעם,
+       מעדכנים רק את form/index.html ו-dashboard/index.html, לא את הדף הזה. -->
+  <a class="card" href="./form/">
+    <div class="icon">📋</div>
+    <h2>טופס עדכון פעילות</h2>
+    <p>לעובדי שטח — דיווח שתילה, ריסוס, קטיף ופעולות נוספות</p>
+  </a>
+
+  <a class="card" href="./dashboard/">
+    <div class="icon">📊</div>
+    <h2>דשבורד ניהול</h2>
+    <p>תמונת מצב של כל החממות, מועדי קטיף וסטטוסים</p>
+  </a>
+</main>
+
+<footer>מערכת ניהול גידולים ופעילות בחממות — ירוק למהדרין</footer>
+
 </body>
 </html>
